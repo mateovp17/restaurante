@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Restaurante Peruano</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Restaurante Cal Ma</h1>
+    <p id="header-text">Sabores auténticos del Perú cerca de Tarragona</p>
+
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <select id="language" onchange="changeLanguage()">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="ca">CA</option>
+            <option value="fr">FR</option>
+        </select>
+    </div>
+
+    <!-- Menú de navegación -->
+   <nav class="menu-nav">
+    <span class="nav-item" onclick="showSection('carta')">Carta</span>
+    <span class="nav-item" onclick="showSection('sobre-nosotros')">Sobre Nosotros</span>
+    <span class="nav-item" onclick="showSection('contacto')">Contacto</span>
+    </nav>
+</header>
+
+<main>
+    <!-- =================== CARTA =================== -->
+    <section id="carta">
+        <div class="menu-container">
+
+            <!-- Categoría Entrantes -->
+            <div class="category" id="entrantes-title" onclick="toggleMenu('entrantes')">Entrantes y Anticuchos</div>
+            <div id="entrantes" class="menu-items">
+                <div class="menu-card">
+                    <img src="imagesp/photo1.jpg" alt="Anticuchos de Pollo">
+                    <div class="content">
+                        <h3 id="anticucho-name">Anticuchos de Pollo</h3>
+                        <p id="anticucho-desc">Brochetas de pollo marinadas con ají amarillo y especias, acompañadas de papas doradas.</p>
+                        <div class="price">€6,50</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo2.jpeg" alt="Causa Limeña">
+                    <div class="content">
+                        <h3 id="causa-name">Causa Limeña</h3>
+                        <p id="causa-desc">Puré de papa amarilla sazonado con limón, relleno de pollo o atún, decorado con aceitunas y huevo.</p>
+                        <div class="price">€6,00</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo4.jpg" alt="Ají de Gallina">
+                    <div class="content">
+                        <h3 id="ajidegallina-name">Ají de Gallina</h3>
+                        <p id="ajidegallina-desc">Pollo deshilachado en salsa de ají amarillo y nueces, acompañado de arroz blanco y papa sancochada.</p>
+                        <div class="price">€7,50</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo5.jpg" alt="Tamal Peruano">
+                    <div class="content">
+                        <h3 id="tamal-name">Tamal Peruano</h3>
+                        <p id="tamal-desc">Masa de maíz rellena de carne y especias, cocida al vapor en hoja de plátano.</p>
+                        <div class="price">€5,50</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo9.jpg" alt="Lomo Saltado">
+                    <div class="content">
+                        <h3 id="lomo-name">Lomo Saltado</h3>
+                        <p id="lomo-desc">Tiras de carne salteadas con cebolla, tomate y papas fritas, servido con arroz.</p>
+                        <div class="price">€10,50</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría Ceviches -->
+            <div class="category" id="ceviches-title" onclick="toggleMenu('ceviches')">Ceviches y Tiraditos</div>
+            <div id="ceviches" class="menu-items">
+                <div class="menu-card">
+                    <img src="imagesp/photo3.jpg" alt="Ceviche Clásico">
+                    <div class="content">
+                        <h3 id="ceviche-clasico-name">Ceviche Clásico</h3>
+                        <p id="ceviche-clasico-desc">Pescado fresco marinado en limón con cebolla, cilantro y ají amarillo.</p>
+                        <div class="price">€12,00</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo6.jpg" alt="Ceviche Mixto">
+                    <div class="content">
+                        <h3 id="ceviche-mixto-name">Ceviche Mixto</h3>
+                        <p id="ceviche-mixto-desc">Mezcla de pescado y mariscos frescos, acompañado de choclo y camote.</p>
+                        <div class="price">€13,50</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo7.jpg" alt="Tiradito de Atún">
+                    <div class="content">
+                        <h3 id="tiradito-name">Tiradito de Atún</h3>
+                        <p id="tiradito-desc">Láminas de atún fresco con salsa de limón y ají amarillo.</p>
+                        <div class="price">€11,50</div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="imagesp/photo8.jpg" alt="Ceviche de Pulpo">
+                    <div class="content">
+                        <h3 id="pulpo-name">Ceviche de Pulpo</h3>
+                        <p id="pulpo-desc">Pulpo fresco en limón con aceite de oliva, cilantro y cebolla morada.</p>
+                        <div class="price">€14,00</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =================== SOBRE NOSOTROS =================== -->
+    <section id="sobre-nosotros" style="display:none;">
+        <h2 id="sobre-nosotros-title">Sobre Nosotros</h2>
+        <p id="sobre-nosotros-text">Somos un restaurante peruano tradicional con un toque moderno, ofreciendo los mejores sabores del Perú cerca de Tarragona.</p>
+    </section>
+
+    <!-- =================== CONTACTO =================== -->
+    <section id="contacto" style="display:none;">
+        <h2 id="contacto-title">Contacto</h2>
+        <p id="direccion-text">Dirección: Tarragona, España</p>
+        <p id="telefono-text">Teléfono: +34 600 000 000</p>
+        <p id="email-text">Email: info@restaurante.com</p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
